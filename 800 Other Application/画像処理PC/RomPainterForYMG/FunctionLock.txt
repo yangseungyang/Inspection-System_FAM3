@@ -1,0 +1,8 @@
+---ã@î\€Ø∏ê›íËÃß≤Ÿ---
+EraseWrite = TRUE
+Erase = TRUE
+Write = TRUE
+Copy = TRUE
+Check = TRUE
+Read = TRUE
+Help = TRUE

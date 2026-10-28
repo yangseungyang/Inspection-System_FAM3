@@ -1,0 +1,78 @@
+VERSION 5.00
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MsflxGrd.OCX"
+Begin VB.Form VerifyResult_Form 
+   BorderStyle     =   1  'å≈íË(é¿ê¸)
+   Caption         =   "è∆çáåãâ "
+   ClientHeight    =   4815
+   ClientLeft      =   4410
+   ClientTop       =   2625
+   ClientWidth     =   4035
+   ControlBox      =   0   'False
+   MaxButton       =   0   'False
+   MinButton       =   0   'False
+   ScaleHeight     =   4815
+   ScaleWidth      =   4035
+   StartUpPosition =   3  'Windows ÇÃä˘íËíl
+   Begin VB.CommandButton OK_btn 
+      Caption         =   "OK"
+      Height          =   495
+      Left            =   1440
+      TabIndex        =   2
+      Top             =   4080
+      Width           =   1215
+   End
+   Begin VB.Frame Frame1 
+      Caption         =   "ïsàÍívâ”èäàÍóó"
+      Height          =   3135
+      Left            =   120
+      TabIndex        =   1
+      Top             =   720
+      Width           =   3735
+      Begin MSFlexGridLib.MSFlexGrid MSFlexGrid1 
+         Height          =   2655
+         Left            =   360
+         TabIndex        =   3
+         Top             =   360
+         Width           =   3135
+         _ExtentX        =   5530
+         _ExtentY        =   4683
+         _Version        =   393216
+         Rows            =   11
+         BackColorBkg    =   -2147483633
+         BorderStyle     =   0
+      End
+      Begin VB.Line Line2 
+         X1              =   352
+         X2              =   3360
+         Y1              =   345
+         Y2              =   345
+      End
+      Begin VB.Line Line1 
+         X1              =   352
+         X2              =   352
+         Y1              =   2825
+         Y2              =   345
+      End
+   End
+   Begin VB.Label Result_lbl 
+      Alignment       =   2  'íÜâõëµÇ¶
+      Caption         =   "è∆çáåãâ "
+      Height          =   255
+      Left            =   360
+      TabIndex        =   0
+      Top             =   240
+      Width           =   3255
+   End
+End
+Attribute VB_Name = "VerifyResult_Form"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+
+Private Sub OK_btn_Click()
+
+    Unload Me
+
+End Sub
+

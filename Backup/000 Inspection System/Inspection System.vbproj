@@ -1,0 +1,464 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C84CDF6B-A5A6-4E42-AAFE-0457AB8AC35F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Inspection_System.My.MyApplication</StartupObject>
+    <RootNamespace>Inspection_System</RootNamespace>
+    <AssemblyName>Inspection System</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>On</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Inspection System.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Inspection System.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonCommunicationLibrary, Version=1.0.2481.34721, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\810 DLL\CommonCommunicationLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetBarcode, Version=2.4.2480.34660, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\810 DLL\DotNetBarcode.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.BARCODELib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>obj\Debug\Interop.BARCODELib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="ToY_StopWatch, Version=1.0.3251.30071, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ToY_StopWatch\cntStopWatch\bin\Release\ToY_StopWatch.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="01 Form\frm001_Main.designer.vb">
+      <DependentUpon>frm001_Main.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01 Form\frm001_Main.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01 Form\frm010_OrderInput.Designer.vb">
+      <DependentUpon>frm010_OrderInput.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01 Form\frm010_OrderInput.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01 Form\frm020_InspectionStartEnd.designer.vb">
+      <DependentUpon>frm020_InspectionStartEnd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01 Form\frm020_InspectionStartEnd.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01 Form\frm030_InspectionInformation.designer.vb">
+      <DependentUpon>frm030_InspectionInformation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01 Form\frm030_InspectionInformation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01 Form\frm100_EquipmentCondition.Designer.vb">
+      <DependentUpon>frm100_EquipmentCondition.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01 Form\frm100_EquipmentCondition.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01 Form\frm101_EquipmentSetting.Designer.vb">
+      <DependentUpon>frm101_EquipmentSetting.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01 Form\frm101_EquipmentSetting.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01 Form\frm110_Result.Designer.vb">
+      <DependentUpon>frm110_Result.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01 Form\frm110_Result.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01 Form\frm120_SelfCheck.Designer.vb">
+      <DependentUpon>frm120_SelfCheck.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01 Form\frm120_SelfCheck.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01 Form\frm130_ManualOperation.Designer.vb">
+      <DependentUpon>frm130_ManualOperation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01 Form\frm130_ManualOperation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01 Form\frm131_ManualDetails.Designer.vb">
+      <DependentUpon>frm131_ManualDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01 Form\frm131_ManualDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01 Form\frm140_MaintenanceMenu.Designer.vb">
+      <DependentUpon>frm140_MaintenanceMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01 Form\frm140_MaintenanceMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01 Form\frm150_SystemInformation.Designer.vb">
+      <DependentUpon>frm150_SystemInformation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01 Form\frm150_SystemInformation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01 Form\frm200_InputPass.Designer.vb">
+      <DependentUpon>frm200_InputPass.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01 Form\frm200_InputPass.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01 Form\frm201_DispWait.Designer.vb">
+      <DependentUpon>frm201_DispWait.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01 Form\frm201_DispWait.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01 Form\frm500_MessagePopUp.Designer.vb">
+      <DependentUpon>frm500_MessagePopUp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01 Form\frm500_MessagePopUp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01 Form\frm501_StatusDisp.Designer.vb">
+      <DependentUpon>frm501_StatusDisp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01 Form\frm501_StatusDisp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01 Form\frm600_Reprint.designer.vb">
+      <DependentUpon>frm600_Reprint.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01 Form\frm600_Reprint.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01 Form\frm999_MasterForm.Designer.vb">
+      <DependentUpon>frm999_MasterForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01 Form\frm999_MasterForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="02 GeneralClass\cls001_Window_Control.vb" />
+    <Compile Include="02 GeneralClass\cls010_MDB_Operation.vb" />
+    <Compile Include="02 GeneralClass\cls011_Excel_Operation.vb" />
+    <Compile Include="02 GeneralClass\cls012_File_Operation.vb" />
+    <Compile Include="02 GeneralClass\cls013_TextFile_Operation.vb" />
+    <Compile Include="02 GeneralClass\cls020_Drive_Control.vb" />
+    <Compile Include="02 GeneralClass\clsCommMain.vb" />
+    <Compile Include="02 GeneralClass\clsNeptune.vb" />
+    <Compile Include="03 ManufacturingClass\cls030_LineSerial.vb" />
+    <Compile Include="03 ManufacturingClass\cls031_MacAddress.vb" />
+    <Compile Include="03 ManufacturingClass\cls034_LabelPrint.vb" />
+    <Compile Include="03 ManufacturingClass\cls060_PCNetSPEED.vb" />
+    <Compile Include="03 ManufacturingClass\cls080_F3LinkToLE.vb" />
+    <Compile Include="02 GeneralClass\cls090_DesignForm_Type01.vb" />
+    <Compile Include="03 ManufacturingClass\cls100_PLASMA_Order.vb" />
+    <Compile Include="03 ManufacturingClass\cls101_ComRS232C.vb" />
+    <Compile Include="03 ManufacturingClass\cls103_ComNIGPIB.vb" />
+    <Compile Include="03 ManufacturingClass\cls110_ServerConnect.vb" />
+    <Compile Include="03 ManufacturingClass\cls102_SignalTower.vb" />
+    <Compile Include="03 ManufacturingClass\cls120_SP_M_Command.vb" />
+    <Compile Include="03 ManufacturingClass\cls121_SP_TEST_MODE.vb" />
+    <Compile Include="03 ManufacturingClass\cls122_FAM3_IOBUS_Ctrl.vb" />
+    <Compile Include="03 ManufacturingClass\cls123_BUBU_IOBUS_TEST.vb" />
+    <Compile Include="03 ManufacturingClass\cls124_KP_IOBUS_TEST.vb" />
+    <Compile Include="03 ManufacturingClass\cls125_PF_IOBUS_TEST.vb" />
+    <Compile Include="03 ManufacturingClass\cls130_EI_GAZO.vb" />
+    <Compile Include="03 ManufacturingClass\cls140_VoltageMeasure.vb" />
+    <Compile Include="04 InspectionClass\cls2D5_RK_RomPack_Inspection.vb" />
+    <Compile Include="04 InspectionClass\cls2D0_Inspection.vb" />
+    <Compile Include="04 InspectionClass\cls2D1_F3SP6x_Inspection.vb" />
+    <Compile Include="04 InspectionClass\cls2D2_F3SP7x_Inspection.vb" />
+    <Compile Include="04 InspectionClass\cls2D3_F3RPxx_Inspection.vb" />
+    <Compile Include="04 InspectionClass\cls2D4_F3SPxx_PF_Inspection.vb" />
+    <Compile Include="04 InspectionClass\cls2D6_F3SPxx_KP_Inspection.vb" />
+    <Compile Include="04 InspectionClass\cls2D7_F3BPxx_Inspcetion.vb" />
+    <Compile Include="04 InspectionClass\cls2D8_F3LE1x_inspection.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="01 Form\frm001_Main.resx">
+      <DependentUpon>frm001_Main.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01 Form\frm010_OrderInput.resx">
+      <DependentUpon>frm010_OrderInput.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01 Form\frm020_InspectionStartEnd.resx">
+      <DependentUpon>frm020_InspectionStartEnd.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01 Form\frm030_InspectionInformation.resx">
+      <DependentUpon>frm030_InspectionInformation.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01 Form\frm100_EquipmentCondition.resx">
+      <DependentUpon>frm100_EquipmentCondition.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01 Form\frm110_Result.resx">
+      <DependentUpon>frm110_Result.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01 Form\frm120_SelfCheck.resx">
+      <DependentUpon>frm120_SelfCheck.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01 Form\frm130_ManualOperation.resx">
+      <DependentUpon>frm130_ManualOperation.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01 Form\frm140_MaintenanceMenu.resx">
+      <DependentUpon>frm140_MaintenanceMenu.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01 Form\frm200_InputPass.resx">
+      <DependentUpon>frm200_InputPass.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01 Form\frm500_MessagePopUp.resx">
+      <DependentUpon>frm500_MessagePopUp.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01 Form\frm501_StatusDisp.resx">
+      <DependentUpon>frm501_StatusDisp.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01 Form\frm600_Reprint.resx">
+      <DependentUpon>frm600_Reprint.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="ADODB">
+      <Guid>{2A75196C-D9EB-4129-B803-931327F72D5C}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="COMCTRLEXLib">
+      <Guid>{B821CB1B-9B64-4C28-A6D4-6E48166438D7}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="EtherCom">
+      <Guid>{0707460A-5DD5-11D2-83C5-00C04F9B07F2}</Guid>
+      <VersionMajor>10</VersionMajor>
+      <VersionMinor>2</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <Private>True</Private>
+    </COMReference>
+    <COMReference Include="JRO">
+      <Guid>{AC3B8B4C-B6CA-11D1-9F31-00C04FC29D52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>6</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="Scripting">
+      <Guid>{420B2830-E718-11CF-893D-00A0C9054228}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BlueLabel.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\YellowLabel.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NavyBlueLabel.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BackColor.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BackColor1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows インストーラ 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

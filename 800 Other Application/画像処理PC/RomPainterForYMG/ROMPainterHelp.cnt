@@ -1,0 +1,19 @@
+:Base ROMPainterHelp.hlp>Window
+:Title ROM Painter
+:Index ROM Painter =ROMPainterHelp.hlp
+1 はじめに =HLP000001
+1 ご利用になる前に
+2 動作環境 =HLP000003
+2 インストールとアンイストール =HLP000004
+2 バージョン情報 =HLP000005
+1 画面と機能
+2 初期画面 =HLP000007
+2 ROM消去書込み =HLP000017
+2 ROM消去 =HLP000015
+2 ROM書込み =HLP000016
+2 ROMコピー =HLP000018
+2 ROM照合 =HLP000019
+2 ROM読出し =HLP000020
+1 おわりに
+2 サポート情報 =HLP000022
+
