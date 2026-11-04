@@ -20,7 +20,8 @@ Public Class cls140_VoltageMeasure
     Public Function VoltMeasure(ByVal ch As String) As Single
 
         'ﾘﾚｰ設定ON
-        Call cLnk1.F3PCLinkCommunication("01" & "BWRY" & "50" & ch & ",001,1", RecvDataLE)
+        'Call cLnk1.F3PCLinkCommunication("01" & "BWRY" & "50" & ch & ",001,1", RecvDataLE)     'Ver0.52 YSH DEL
+        Call cLnk1.F3PCLinkCommunication("01" & "BWRY" & "60" & ch & ",001,1", RecvDataLE)     'Ver0.52 YSH ADD : 전압 ch 전환 YC16 제어 PLC slot6 으로 이동 (A8 사인타워 BWRY5xx 충돌 회피, md Rev 18 16-5 / FD1-AIEC005 R01 P6)
         If cLnk1.ERR_COMMENT <> "" Then
             mErrorComment = cLnk1.ERR_COMMENT
             Throw New ApplicationException(mErrorComment)
@@ -28,10 +29,12 @@ Public Class cls140_VoltageMeasure
 
         'DMM測定
         System.Threading.Thread.Sleep(700)         '700msecのWait
-        VoltMeasure = DMM_7555_Measure()
+        'VoltMeasure = DMM_7555_Measure()       'Ver0.52 YSH DEL
+        VoltMeasure = cls141_DMM34465A.MeasureDCV()     'Ver0.52 YSH ADD : A8 설비 DMM 34465A(GPIB) 공용 (md Rev 2 7-1, 7-2 / 분석 v1.1 No 8)
 
         'ﾘﾚｰ設定OFF
-        Call cLnk1.F3PCLinkCommunication("01" & "BWRY" & "50" & ch & ",001,0", RecvDataLE)
+        'Call cLnk1.F3PCLinkCommunication("01" & "BWRY" & "50" & ch & ",001,0", RecvDataLE)     'Ver0.52 YSH DEL
+        Call cLnk1.F3PCLinkCommunication("01" & "BWRY" & "60" & ch & ",001,0", RecvDataLE)     'Ver0.52 YSH ADD : 전압 ch 전환 YC16 slot6 (md Rev 18 16-5)
         If cLnk1.ERR_COMMENT <> "" Then
             mErrorComment = cLnk1.ERR_COMMENT
             Throw New ApplicationException(mErrorComment)
@@ -165,7 +168,8 @@ Public Class cls140_VoltageMeasure
         'ﾘﾚｰ設定（GND）
         cLnk1 = New cls080_F3LinkToLE
         cLnk1.IPAdd = IP_U1
-        Call cLnk1.F3PCLinkCommunication("01" & "BWRY" & "509" & ",001,1", RecvDataLE)   'GND側設定
+        'Call cLnk1.F3PCLinkCommunication("01" & "BWRY" & "509" & ",001,1", RecvDataLE)   'GND側設定     'Ver0.52 YSH DEL
+        Call cLnk1.F3PCLinkCommunication("01" & "BWRY" & "609" & ",001,1", RecvDataLE)   'GND側設定     'Ver0.52 YSH ADD : GND 측 YC16 slot6 (md Rev 18 16-5 / FD1-AIEC005 R01 P6)
         If cLnk1.ERR_COMMENT <> "" Then
             mErrorComment = cLnk1.ERR_COMMENT
             Throw New ApplicationException(mErrorComment)
@@ -176,7 +180,8 @@ Public Class cls140_VoltageMeasure
     Protected Overrides Sub Finalize()
 
         'ﾘﾚｰ設定（GND）OFF
-        Call cLnk1.F3PCLinkCommunication("01" & "BWRY" & "509" & ",001,0", RecvDataLE)   'GND側設定
+        'Call cLnk1.F3PCLinkCommunication("01" & "BWRY" & "509" & ",001,0", RecvDataLE)   'GND側設定     'Ver0.52 YSH DEL
+        Call cLnk1.F3PCLinkCommunication("01" & "BWRY" & "609" & ",001,0", RecvDataLE)   'GND側設定     'Ver0.52 YSH ADD : GND 측 YC16 slot6 (md Rev 18 16-5)
         cLnk1 = Nothing
 
         MyBase.Finalize()

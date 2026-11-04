@@ -32,7 +32,8 @@ Public Class frm001_Main
     'Private Const Version As String = "0.48"        '2025.12.09 ATY
     ' Private Const Version As String = "0.49"        '2026.08.12 HSJ
     ' Private Const Version As String = "0.50"        '2026.08.20 SYH
-    Private Const Version As String = "0.51"        '2026.08.31 SYH
+    'Private Const Version As String = "0.51"        '2026.08.31 SYH     'Ver0.52 YSH DEL
+    Private Const Version As String = "0.52"        '2026.10.27 YSH     'Ver0.52 YSH ADD : A8 CPU검사장치 ADD-ON (Router END 회신, DMM 34465A, 시그널타워 slot5) / md Rev 2, SystemSetting.mdb 0.52 레코드 추가
     Private EtherComNDll As New EtherComN.Dll             'Ver 0.36 GYS ADD
 
     'Class ================================================
@@ -148,6 +149,8 @@ Public Class frm001_Main
         End Try
 
         cBcd.PortSetup()
+
+        Call clsRouterLink.SendEnd(Me.SerialPort1, mSystemLog)     'Ver0.52 YSH ADD : Barcode_Router 로 검사 종료(END) 회신. EquipmentSetting.mdb RouterLink = Yes 일 때만 (md Rev 7 11-7 P3)
 
         RemoveHandler txtBarcode(0).TextChanged, AddressOf txtBarcode_TextChanged
 

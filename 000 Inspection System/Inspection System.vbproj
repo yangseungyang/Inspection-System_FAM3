@@ -225,6 +225,7 @@
     <Compile Include="02 GeneralClass\cls020_Drive_Control.vb" />
     <Compile Include="02 GeneralClass\clsCommMain.vb" />
     <Compile Include="02 GeneralClass\clsNeptune.vb" />
+    <Compile Include="02 GeneralClass\clsRouterLink.vb" />
     <Compile Include="03 ManufacturingClass\cls030_LineSerial.vb" />
     <Compile Include="03 ManufacturingClass\cls031_MacAddress.vb" />
     <Compile Include="03 ManufacturingClass\cls034_LabelPrint.vb" />
@@ -244,6 +245,9 @@
     <Compile Include="03 ManufacturingClass\cls125_PF_IOBUS_TEST.vb" />
     <Compile Include="03 ManufacturingClass\cls130_EI_GAZO.vb" />
     <Compile Include="03 ManufacturingClass\cls140_VoltageMeasure.vb" />
+    <Compile Include="03 ManufacturingClass\cls103_CommMain.vb" />
+    <Compile Include="03 ManufacturingClass\cls240_34410A.vb" />
+    <Compile Include="03 ManufacturingClass\cls141_DMM34465A.vb" />
     <Compile Include="04 InspectionClass\cls2D5_RK_RomPack_Inspection.vb" />
     <Compile Include="04 InspectionClass\cls2D0_Inspection.vb" />
     <Compile Include="04 InspectionClass\cls2D1_F3SP6x_Inspection.vb" />
@@ -332,6 +336,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <!-- Ver0.52 YSH ADD : DMM 34465A(GPIB) 실행용 NI DLL. 컴파일 참조로 넣으면 기존 cls103_ComNIGPIB 의 Imports 별칭 'c' 와 충돌하므로 출력 폴더 복사만 한다 (A8 과 같은 DLL) -->
+    <Content Include="..\810 DLL\NationalInstruments.Common.dll">
+      <Link>NationalInstruments.Common.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\810 DLL\NationalInstruments.FieldBus.dll">
+      <Link>NationalInstruments.FieldBus.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\810 DLL\NationalInstruments.NI4882.dll">
+      <Link>NationalInstruments.NI4882.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

@@ -1473,7 +1473,8 @@ retry1:
             cLnk.IPAdd = IP_U1
 
             'YC16-0Nのch11
-            Call cLnk.F3PCLinkCommunication("01" & "BWRY" & "511" & ",001,1", RecvDataLE)
+            'Call cLnk.F3PCLinkCommunication("01" & "BWRY" & "511" & ",001,1", RecvDataLE)     'Ver0.52 YSH DEL
+            Call cLnk.F3PCLinkCommunication("01" & "BWRY" & "611" & ",001,1", RecvDataLE)     'Ver0.52 YSH ADD : 방전저항 YC16 slot6 의 11번 (md Rev 18 16-5 / FD1-AIEC005 R01 P6)
             If cLnk.ERR_COMMENT <> "" Then
                 mErrorComment = cLnk.ERR_COMMENT
                 Throw New ApplicationException(mErrorComment)
@@ -1488,7 +1489,8 @@ retry1:
         Finally
 
             'ﾘﾚｰ設定OFF
-            Call cLnk.F3PCLinkCommunication("01" & "BWRY" & "511" & ",001,0", RecvDataLE)
+            'Call cLnk.F3PCLinkCommunication("01" & "BWRY" & "511" & ",001,0", RecvDataLE)     'Ver0.52 YSH DEL
+            Call cLnk.F3PCLinkCommunication("01" & "BWRY" & "611" & ",001,0", RecvDataLE)     'Ver0.52 YSH ADD : 방전저항 YC16 slot6 의 11번 (md Rev 18 16-5)
             If cLnk.ERR_COMMENT <> "" Then
                 mErrorComment = cLnk.ERR_COMMENT
                 Throw New ApplicationException(mErrorComment)

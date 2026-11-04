@@ -928,7 +928,8 @@ errHandler:
             cLnk = Nothing
         End Try
 
-        scmd = "01" & "BWRY" & "301" & ",001,0"
+        'scmd = "01" & "BWRY" & "301" & ",001,0"     'Ver0.52 YSH DEL
+        scmd = "01" & "BWRY" & "801" & ",001,0"     'Ver0.52 YSH ADD : 버스모니터 전원 제어 PLC slot8 (실제 실장 slot1 SP76 / 3 YC08 / 5 YC08 / 7 LE11 이라 slot8 사용, md Rev 20 16-10)
         Try
             Call cLnk.F3PCLinkCommunication(scmd, rCmd)
             If cLnk.ERR_COMMENT <> "" Then
@@ -951,7 +952,8 @@ errHandler:
 
         cLnk = New cls080_F3LinkToLE
         cLnk.IPAdd = IP_U1
-        scmd = "01" & "BWRY" & "301" & ",001,1"
+        'scmd = "01" & "BWRY" & "301" & ",001,1"     'Ver0.52 YSH DEL
+        scmd = "01" & "BWRY" & "801" & ",001,1"     'Ver0.52 YSH ADD : 버스모니터 전원 제어 PLC slot8 (실제 실장 slot1 SP76 / 3 YC08 / 5 YC08 / 7 LE11 이라 slot8 사용, md Rev 20 16-10)
         Try
             Call cLnk.F3PCLinkCommunication(scmd, rCmd)
             If cLnk.ERR_COMMENT <> "" Then
@@ -988,7 +990,8 @@ errHandler:
 
         Call mSecWait(500)
 
-        scmd = "01" & "BWRY" & "301" & ",001,1"
+        'scmd = "01" & "BWRY" & "301" & ",001,1"     'Ver0.52 YSH DEL
+        scmd = "01" & "BWRY" & "801" & ",001,1"     'Ver0.52 YSH ADD : 버스모니터 전원 제어 PLC slot8 (실제 실장 slot1 SP76 / 3 YC08 / 5 YC08 / 7 LE11 이라 slot8 사용, md Rev 20 16-10)
         Try
             Call cLnk.F3PCLinkCommunication(scmd, rCmd)
             If cLnk.ERR_COMMENT <> "" Then

@@ -3,7 +3,8 @@
     Dim cLnk As cls080_F3LinkToLE
     Dim cSQL As cls010_MDB_Operation
 
-    Dim FAM3Slot As String = "13"
+    'Dim FAM3Slot As String = "13"      'Ver0.52 YSH DEL
+    Dim FAM3Slot As String = "5"        'Ver0.52 YSH ADD : A8 설비 시그널타워(slot5)를 같이 사용, 비트 패턴은 A8 과 동일 (md Rev 2 7-9 / 분석 v1.1 No 10)
 
     Dim mSigTower As Boolean
     Dim mComment As String
